@@ -27,7 +27,8 @@ article_elems = driver.find_elements(By.CLASS_NAME, 'tnt-headline')
 # article_links will be a list of links to articles found on the main search page
 article_links = [art_elem.find_element(By.TAG_NAME, 'a').get_attribute('href') for art_elem in article_elems]
 
-
+#Lets it read the articles ones and stops, instead of constant refresh 
+driver.findElement(By.tagName("body")).sendKeys("Keys.ESCAPE")
 
 for link in article_links:
     try:
